@@ -1,7 +1,7 @@
 import { BinarySearchTree } from './binary-search-tree'
 
-function recordAllData(bst: BinarySearchTree): unknown[] {
-  const out: unknown[] = []
+function recordAllData(bst: BinarySearchTree): number[] {
+  const out: number[] = []
   bst.each((data) => {
     out.push(data)
   })

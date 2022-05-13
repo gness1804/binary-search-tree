@@ -34,7 +34,14 @@ export class BinarySearchTree {
     }
   }
 
-  public each(callback: (data: unknown) => unknown): unknown {
-    throw new Error('Remove this statement and implement this function')
+  public each(callback: (data: number) => void) {
+    // iterate through each child BinarySearchTree and get the data
+    if (this._left) {
+      this._left.each(callback);
+    }
+    callback(this._data);
+    if (this.right) {
+      this.right.each(callback);
+    }
   }
 }
