@@ -1,22 +1,29 @@
 export class BinarySearchTree {
-  constructor(data: unknown) {
-    throw new Error('Remove this statement and implement this function')
+  _data: number;
+  _left: BinarySearchTree | undefined;
+  _right: BinarySearchTree | undefined;
+  constructor(data: number) {
+    this._data = data;
   }
 
-  public get data(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  public get data(): number {
+    return this._data;
   }
 
   public get right(): BinarySearchTree | undefined {
-    throw new Error('Remove this statement and implement this function')
+    return this._right;
   }
 
   public get left(): BinarySearchTree | undefined {
-    throw new Error('Remove this statement and implement this function')
+    return this._left;
   }
 
-  public insert(item: unknown): unknown {
-    throw new Error('Remove this statement and implement this function')
+  public insert(item: number) {
+    if (item < this._data) {
+      this._left = new BinarySearchTree(item);
+    } else {
+      this._right = new BinarySearchTree(item);
+    }
   }
 
   public each(callback: (data: unknown) => unknown): unknown {
