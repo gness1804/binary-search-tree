@@ -20,9 +20,17 @@ export class BinarySearchTree {
 
   public insert(item: number) {
     if (item <= this._data) {
-      this._left = new BinarySearchTree(item);
+      if (this._left) {
+        this._left.insert(item)
+      } else {
+        this._left = new BinarySearchTree(item);
+      }
     } else {
-      this._right = new BinarySearchTree(item);
+      if (this._right) {
+        this._right.insert(item)
+      } else {
+        this._right = new BinarySearchTree(item);
+      }
     }
   }
 
